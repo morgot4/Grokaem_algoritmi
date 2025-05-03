@@ -1,3 +1,10 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from divide_and_conquer import f
+
+class Settings(BaseSettings):
+    MODEL: str
+    model_config = SettingsConfigDict(env_file=".env")
+
 def binary_search(lst: list, item):
     low = 0
     high = len(lst) - 1
